@@ -1,0 +1,14 @@
+package ignitejava2;
+import java.util.Collection;
+
+import org.apache.ignite.Ignite;
+import org.apache.ignite.IgniteCluster;
+import org.apache.ignite.cluster.ClusterGroup;
+public class gettingNodes {
+	IgniteCluster cluster = ignite.cluster();
+
+	ClusterGroup workerGroup = cluster.forAttribute("ROLE", "worker");
+
+	Collection<GridNode> workerNodes = workerGroup.nodes();
+
+}
